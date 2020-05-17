@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light">
+  <h1 class="navbar-brand" (click)="filterPosts('id')">Nitro Challenge</h1>
+  <div class="btn-group navbar-right" dropdown>
+    <button id="dropdown-button"
+            dropdownToggle type="button"
+            class="btn btn-outline-dark dropdown-toggle"
+            aria-controls="dropdown">
+      Filter Posts <span class="caret"></span>
+    </button>
+    <ul id="dropdown" *dropdownMenu class="dropdown-menu"
+        role="menu" aria-labelledby="dropdown-button">
+      <li role="menuitem"><a class="dropdown-item" (click)="filterPosts('time')">by weeks</a></li>
+      <li role="menuitem"><a class="dropdown-item" (click)="filterPosts('author')">by authors</a></li>
+      <li role="menuitem"><a class="dropdown-item" (click)="filterPosts('location')">by locations</a></li>
+    </ul>
+  </div>
+</nav>

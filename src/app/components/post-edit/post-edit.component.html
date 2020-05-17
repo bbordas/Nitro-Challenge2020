@@ -1,0 +1,9 @@
+<span *ngIf='!editMode'
+      (click)='editMode=true'
+      class='cell'>
+  {{ data }} <i class="fas fa-pencil-alt"></i> </span>
+<input *ngIf='editMode'
+       (focusout)="editMode=false; onEdit()"
+       (keydown.enter)='$event.target.blur(); onEdit()'
+       [(ngModel)]='data'
+       class='cellInput'>

@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col jobs_index_middle_panels">
+    <app-post-group
+      *ngFor="let name of groupNames; let i = index"
+      [groupName] = name
+      [isCollapsed] = "i === 0 ? false : true"
+      [posts] = "this.getPosts(name, filter)">
+    </app-post-group>
+    </div>
+  </div>
+</div>

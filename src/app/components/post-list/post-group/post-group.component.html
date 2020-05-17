@@ -1,0 +1,16 @@
+<div class="card shadow-sm rounded ">
+  <button class="card-header text-center"
+          (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed"
+          aria-controls="collapse">
+    <h5>Show posts from {{groupName}} <i [ngClass]="isCollapsed ?'fas fa-angle-down' : 'fas fa-angle-up'"></i></h5>
+  </button>
+  <div id="collapse" [collapse]="isCollapsed">
+    <app-post-single
+      *ngFor="let post of posts; let i = index"
+      [post] = "post"
+      [id]="i">
+    </app-post-single>
+  </div>
+</div>
+
